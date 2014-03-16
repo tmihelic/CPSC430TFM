@@ -1,0 +1,22 @@
+drop table locations;
+drop table users;
+drop table customer;
+drop table custDemo;
+create table locations(pkey varchar(5) primary key, siteName varchar(30));
+create table users(pkey integer primary key, username varchar(30), password varchar(30));
+create table customer(pkey integer primary key, username varchar(30), demographics integer);
+create table custDemo(pkey integer primary key, 
+	gender varchar(6), 
+	age varchar(3), 
+	ethincity varchar(10), 
+	snap integer,
+	zipCode varchar(5),
+	freq varchar(8),
+	found varchar(15),
+	tokens real,
+	bTokens varchar(3));
+insert into users values(1, 'admin', 'password');
+.separator , 
+.import customers.csv customer
+.import locations.csv locations
+.import customerDemographics.csv custDemo
