@@ -37,3 +37,10 @@ farmers.db
     locations.csv
     customers.csv
     customerDemographics.csv
+
+
+SOURCING DATABASE
+
+From command line type:
+	sqlite3 farmers.db
+	.read createTables
