@@ -14,6 +14,8 @@
     NSString *todaysDate;
     IBOutlet UITextField *startTimeText;
     NSString *startTime;
+    IBOutlet UITextField *snapVendorsText;
+    IBOutlet UITextField *regVendorsText;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *marketNamesLabel;

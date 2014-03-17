@@ -20,13 +20,14 @@
     [super viewDidLoad];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     
-    UIDatePicker *dp, *dp2 = [[UIDatePicker alloc]init];
+    UIDatePicker *dp = [[UIDatePicker alloc]init];
     [dp setDatePickerMode:UIDatePickerModeDate];
     dateText.inputView = dp;
     [formatter setDateFormat:@"MM/dd/yy"];
     todaysDate = [formatter stringFromDate:[NSDate date]];
     dateText.text = todaysDate;
     
+    UIDatePicker *dp2 = [[UIDatePicker alloc]init];
     [dp2 setDatePickerMode:UIDatePickerModeTime];
     startTimeText.inputView = dp2;
     [formatter setDateFormat:@"hh:mm"];
@@ -35,35 +36,53 @@
     
     UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
     UIToolbar *toolbar2 = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    //UIToolbar *toolbar3 = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
     UIToolbar *toolbar3 = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    UIToolbar *toolbar4 = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
     
     toolbar.barStyle = UIBarStyleDefault;
     toolbar2.barStyle = UIBarStyleDefault;
+    //toolbar3.barStyle = UIBarStyleDefault;
     toolbar3.barStyle = UIBarStyleDefault;
+    toolbar4.barStyle = UIBarStyleDefault;
     
     UIBarButtonItem *itemDone = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:startTimeText action:@selector(resignFirstResponder)];
     UIBarButtonItem *itemDone2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:dateText action:@selector(resignFirstResponder)];
-    UIBarButtonItem *itemDone3 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:_picker action:@selector(resignFirstResponder)];
+    //UIBarButtonItem *itemDone3 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:_picker action:@selector(resignFirstResponder)];
+    UIBarButtonItem *itemDone3 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:snapVendorsText action:@selector(resignFirstResponder)];
+    UIBarButtonItem *itemDone4 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:regVendorsText action:@selector(resignFirstResponder)];
+
+    
     UIBarButtonItem *itemSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
 
     
     toolbar.items = @[itemSpace,itemDone];
     toolbar2.items = @[itemSpace,itemDone2];
+    //toolbar3.items = @[itemSpace,itemDone3];
     toolbar3.items = @[itemSpace,itemDone3];
+    toolbar4.items = @[itemSpace,itemDone4];
+
     
     startTimeText.inputAccessoryView = toolbar;
     dateText.inputAccessoryView = toolbar2;
     //_picker inputAccessoryView =toolbar3;
+    snapVendorsText.inputAccessoryView = toolbar3;
+    regVendorsText.inputAccessoryView = toolbar4;
+
     
     [dateText becomeFirstResponder];
     [startTimeText becomeFirstResponder];
-    [_picker becomeFirstResponder];
+    //[_picker becomeFirstResponder];
+    [snapVendorsText becomeFirstResponder];
+    [regVendorsText becomeFirstResponder];
     
     _marketNames = @[@"Australia (AUD)", @"China (CNY)",
                       @"France (EUR)", @"Great Britain (GBP)", @"Japan (JPY)"];
     
     dateText.delegate = self;
     startTimeText.delegate = self;
+    snapVendorsText.delegate = self;
+    regVendorsText.delegate = self;
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
