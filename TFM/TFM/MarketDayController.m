@@ -34,47 +34,49 @@
     startTime = [formatter stringFromDate:[NSDate date]];
     startTimeText.text = startTime;
     
-    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    UIToolbar *toolbar1 = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
     UIToolbar *toolbar2 = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
-    //UIToolbar *toolbar3 = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
     UIToolbar *toolbar3 = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
     UIToolbar *toolbar4 = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    UIToolbar *toolbar5 = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    UIToolbar *toolbar6 = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
     
-    toolbar.barStyle = UIBarStyleDefault;
+    toolbar1.barStyle = UIBarStyleDefault;
     toolbar2.barStyle = UIBarStyleDefault;
-    //toolbar3.barStyle = UIBarStyleDefault;
     toolbar3.barStyle = UIBarStyleDefault;
     toolbar4.barStyle = UIBarStyleDefault;
+    toolbar5.barStyle = UIBarStyleDefault;
+    toolbar6.barStyle = UIBarStyleDefault;
     
-    UIBarButtonItem *itemDone = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:startTimeText action:@selector(resignFirstResponder)];
+    UIBarButtonItem *itemDone1 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:startTimeText action:@selector(resignFirstResponder)];
     UIBarButtonItem *itemDone2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:dateText action:@selector(resignFirstResponder)];
-    //UIBarButtonItem *itemDone3 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:_picker action:@selector(resignFirstResponder)];
     UIBarButtonItem *itemDone3 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:snapVendorsText action:@selector(resignFirstResponder)];
     UIBarButtonItem *itemDone4 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:regVendorsText action:@selector(resignFirstResponder)];
+    UIBarButtonItem *itemDone5 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:marketStaffText action:@selector(resignFirstResponder)];
+    UIBarButtonItem *itemDone6 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:notesText action:@selector(resignFirstResponder)];
 
-    
     UIBarButtonItem *itemSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-
     
-    toolbar.items = @[itemSpace,itemDone];
+    toolbar1.items = @[itemSpace,itemDone1];
     toolbar2.items = @[itemSpace,itemDone2];
-    //toolbar3.items = @[itemSpace,itemDone3];
     toolbar3.items = @[itemSpace,itemDone3];
     toolbar4.items = @[itemSpace,itemDone4];
-
+    toolbar5.items = @[itemSpace,itemDone5];
+    toolbar6.items = @[itemSpace,itemDone6];
     
-    startTimeText.inputAccessoryView = toolbar;
+    startTimeText.inputAccessoryView = toolbar1;
     dateText.inputAccessoryView = toolbar2;
-    //_picker inputAccessoryView =toolbar3;
     snapVendorsText.inputAccessoryView = toolbar3;
     regVendorsText.inputAccessoryView = toolbar4;
+    marketStaffText.inputAccessoryView = toolbar5;
+    notesText.inputAccessoryView = toolbar6;
 
-    
     [dateText becomeFirstResponder];
     [startTimeText becomeFirstResponder];
-    //[_picker becomeFirstResponder];
     [snapVendorsText becomeFirstResponder];
     [regVendorsText becomeFirstResponder];
+    [marketStaffText becomeFirstResponder];
+    [notesText becomeFirstResponder];
     
     _marketNames = @[@"Australia (AUD)", @"China (CNY)",
                       @"France (EUR)", @"Great Britain (GBP)", @"Japan (JPY)"];
@@ -83,6 +85,7 @@
     startTimeText.delegate = self;
     snapVendorsText.delegate = self;
     regVendorsText.delegate = self;
+    marketStaffText.delegate = self;
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -126,9 +129,21 @@ numberOfRowsInComponent:(NSInteger)component
     _marketNamesLabel.text = resultString;
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    [textField resignFirstResponder];
-    return YES;
+- (void)setItems:(NSArray *)items animated:(BOOL)animated {
+    
+    UIToolbar *mypickerToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    mypickerToolbar.barStyle = UIBarStyleBlackOpaque;
+    [mypickerToolbar sizeToFit];
+    
+    NSMutableArray *barItems = [[NSMutableArray alloc] init];
+    
+    UIBarButtonItem *flexSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:_picker action:nil];
+    [barItems addObject:flexSpace];
+    
+    UIBarButtonItem *doneBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:_picker action:@selector(resignFirstResponder)];
+    [barItems addObject:doneBtn];
+    
+    [mypickerToolbar setItems:barItems animated:YES];
+    
 }
 @end

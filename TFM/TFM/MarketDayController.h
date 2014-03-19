@@ -16,9 +16,11 @@
     NSString *startTime;
     IBOutlet UITextField *snapVendorsText;
     IBOutlet UITextField *regVendorsText;
+    IBOutlet UITextField *marketStaffText;
+    IBOutlet UITextView *notesText;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *marketNamesLabel;
 @property (strong, nonatomic) NSArray *marketNames;
-@property (weak, nonatomic) IBOutlet UIPickerView *picker;
+@property (strong, nonatomic) IBOutlet UIPickerView *picker;
 @end
