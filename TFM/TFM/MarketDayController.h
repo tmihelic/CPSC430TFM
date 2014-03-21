@@ -18,9 +18,9 @@
     IBOutlet UITextField *regVendorsText;
     IBOutlet UITextField *marketStaffText;
     IBOutlet UITextView *notesText;
+    IBOutlet UILabel *marketNamesLabel;
+    NSArray *marketNames;
+    IBOutlet UIPickerView *picker;
 }
 
-@property (weak, nonatomic) IBOutlet UILabel *marketNamesLabel;
-@property (strong, nonatomic) NSArray *marketNames;
-@property (strong, nonatomic) IBOutlet UIPickerView *picker;
 @end

@@ -71,6 +71,7 @@
     marketStaffText.inputAccessoryView = toolbar5;
     notesText.inputAccessoryView = toolbar6;
 
+    [dp resignFirstResponder];
     [dateText becomeFirstResponder];
     [startTimeText becomeFirstResponder];
     [snapVendorsText becomeFirstResponder];
@@ -78,7 +79,7 @@
     [marketStaffText becomeFirstResponder];
     [notesText becomeFirstResponder];
     
-    _marketNames = @[@"Australia (AUD)", @"China (CNY)",
+    marketNames = @[@"Australia (AUD)", @"China (CNY)",
                       @"France (EUR)", @"Great Britain (GBP)", @"Japan (JPY)"];
     
     dateText.delegate = self;
@@ -107,14 +108,14 @@
 - (NSInteger)pickerView:(UIPickerView *)pickerView
 numberOfRowsInComponent:(NSInteger)component
 {
-    return _marketNames.count;
+    return marketNames.count;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView
              titleForRow:(NSInteger)row
             forComponent:(NSInteger)component
 {
-    return _marketNames[row];
+    return marketNames[row];
 }
 
 #pragma mark -
@@ -125,25 +126,8 @@ numberOfRowsInComponent:(NSInteger)component
     
     NSString *resultString = [[NSString alloc] initWithFormat:
                               @"%@",
-                              _marketNames[row]];
-    _marketNamesLabel.text = resultString;
+                              marketNames[row]];
+    marketNamesLabel.text = resultString;
 }
 
-- (void)setItems:(NSArray *)items animated:(BOOL)animated {
-    
-    UIToolbar *mypickerToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
-    mypickerToolbar.barStyle = UIBarStyleBlackOpaque;
-    [mypickerToolbar sizeToFit];
-    
-    NSMutableArray *barItems = [[NSMutableArray alloc] init];
-    
-    UIBarButtonItem *flexSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:_picker action:nil];
-    [barItems addObject:flexSpace];
-    
-    UIBarButtonItem *doneBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:_picker action:@selector(resignFirstResponder)];
-    [barItems addObject:doneBtn];
-    
-    [mypickerToolbar setItems:barItems animated:YES];
-    
-}
 @end

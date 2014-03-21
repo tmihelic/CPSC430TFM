@@ -14,7 +14,7 @@
 		28B753CA18BB99950002A5DA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B753C918BB99950002A5DA /* main.m */; };
 		28B753CE18BB99950002A5DA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B753CD18BB99950002A5DA /* AppDelegate.m */; };
 		28B753D118BB99950002A5DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28B753CF18BB99950002A5DA /* Main.storyboard */; };
-		28B753D718BB99950002A5DA /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B753D618BB99950002A5DA /* SecondViewController.m */; };
+		28B753D718BB99950002A5DA /* CustomerAdditionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B753D618BB99950002A5DA /* CustomerAdditionController.m */; };
 		28B753D918BB99950002A5DA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28B753D818BB99950002A5DA /* Images.xcassets */; };
 		28B753E018BB99950002A5DA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28B753DF18BB99950002A5DA /* XCTest.framework */; };
 		28B753E118BB99950002A5DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28B753BD18BB99950002A5DA /* Foundation.framework */; };
@@ -50,8 +50,8 @@
 		28B753CC18BB99950002A5DA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		28B753CD18BB99950002A5DA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		28B753D018BB99950002A5DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		28B753D518BB99950002A5DA /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		28B753D618BB99950002A5DA /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		28B753D518BB99950002A5DA /* CustomerAdditionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomerAdditionController.h; sourceTree = "<group>"; };
+		28B753D618BB99950002A5DA /* CustomerAdditionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomerAdditionController.m; sourceTree = "<group>"; };
 		28B753D818BB99950002A5DA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		28B753DE18BB99950002A5DA /* TFMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TFMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		28B753DF18BB99950002A5DA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -132,7 +132,7 @@
 				28B753CC18BB99950002A5DA /* AppDelegate.h */,
 				28B753CD18BB99950002A5DA /* AppDelegate.m */,
 				28B753CF18BB99950002A5DA /* Main.storyboard */,
-				28B753D518BB99950002A5DA /* SecondViewController.h */,
+				28B753D518BB99950002A5DA /* CustomerAdditionController.h */,
 				28B753FE18BBA5560002A5DA /* FifthViewController.h */,
 				28B753FF18BBA5560002A5DA /* FifthViewController.m */,
 				28B7540018BBA5560002A5DA /* SixthViewController.h */,
@@ -141,7 +141,7 @@
 				28B753FB18BBA4460002A5DA /* FourthViewController.h */,
 				28B753FC18BBA4460002A5DA /* FourthViewController.m */,
 				28B753F618BBA12D0002A5DA /* ThirdViewController.m */,
-				28B753D618BB99950002A5DA /* SecondViewController.m */,
+				28B753D618BB99950002A5DA /* CustomerAdditionController.m */,
 				28B753D818BB99950002A5DA /* Images.xcassets */,
 				28B753C418BB99950002A5DA /* Supporting Files */,
 			);
@@ -277,7 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28B753D718BB99950002A5DA /* SecondViewController.m in Sources */,
+				28B753D718BB99950002A5DA /* CustomerAdditionController.m in Sources */,
 				28B753F718BBA12D0002A5DA /* ThirdViewController.m in Sources */,
 				28B753CE18BB99950002A5DA /* AppDelegate.m in Sources */,
 				28B753FD18BBA4460002A5DA /* FourthViewController.m in Sources */,
