@@ -7,6 +7,7 @@
 //
 
 #import "CustomerAdditionController.h"
+#import "MarketDayController.h"
 
 @interface CustomerAdditionController ()
 
@@ -84,8 +85,24 @@ numberOfRowsInComponent:(NSInteger)component
     NSString *resultString = [[NSString alloc] initWithFormat:
                               @"%@",
                               freqNames[row]];
-    freqNamesLabel.text = resultString;
+    ethNamesLabel.text = resultString;
 }
 
+- (IBAction)submitCust:(id)sender {
+    NSString *dayOutString = @"";
+    dayOutString = [dayOutString stringByAppendingFormat:@"%@, %@, %@, %@, %@\n", zipText.text, [gender titleForSegmentAtIndex:gender.selectedSegmentIndex],[freq titleForSegmentAtIndex:freq.selectedSegmentIndex],ageText.text,[snapVSCredit titleForSegmentAtIndex:snapVSCredit.selectedSegmentIndex]];
+    paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    docDirectory = [paths objectAtIndex:0];
+    NSString *filename = @"";
+//    filename = [ stringByReplacingOccurrencesOfString:@"/" withString:@"."];
+    filename = [filename stringByAppendingString:(@".csv")];
+    outputFileName = [docDirectory stringByAppendingPathComponent:@"cust.csv"];
+    NSFileHandle *myHandle = [NSFileHandle fileHandleForUpdatingAtPath:outputFileName ];
+    [myHandle seekToEndOfFile];
+    [myHandle writeData:  [dayOutString dataUsingEncoding:NSUTF8StringEncoding]];
+    [myHandle closeFile];
+
+
+}
 
 @end

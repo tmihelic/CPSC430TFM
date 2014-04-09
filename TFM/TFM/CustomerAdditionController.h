@@ -13,8 +13,15 @@
     IBOutlet UITextField *ageText;
     IBOutlet UIPickerView *picker;
     NSArray *freqNames;
-    IBOutlet UILabel *freqNamesLabel;
+    IBOutlet UILabel *ethNamesLabel;
     IBOutlet UITextView *questionText;
+    IBOutlet UIButton *submit;
+    IBOutlet UISegmentedControl *gender;
+    IBOutlet UISegmentedControl *freq;
+    IBOutlet UISegmentedControl *snapVSCredit;
+    NSArray *paths;// = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *docDirectory;// = [paths objectAtIndex:0];
+    NSString *outputFileName;// = [docDirectory stringByAppendingPathComponent:@"cust.csv"];
 }
-    
+
 @end

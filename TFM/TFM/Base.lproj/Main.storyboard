@@ -39,13 +39,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LXE-oE-Uoj">
-                                <rect key="frame" x="70" y="168" width="76" height="30"/>
+                                <rect key="frame" x="70" y="168" width="107" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mhC-iD-FLo">
-                                <rect key="frame" x="112" y="206" width="55" height="30"/>
+                                <rect key="frame" x="112" y="206" width="100" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -116,11 +116,14 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTh-cq-JTR">
-                                <rect key="frame" x="360" y="667" width="49" height="30"/>
+                                <rect key="frame" x="360" y="472" width="49" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Submit">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitMarketDay:" destination="9pv-A4-QxB" eventType="touchUpInside" id="hVV-Sy-5O0"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Notes:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7u-sr-Je9">
                                 <rect key="frame" x="20" y="358" width="51" height="21"/>
@@ -147,6 +150,7 @@
                         <outlet property="regVendorsText" destination="hWd-rp-XD1" id="oga-tp-7ve"/>
                         <outlet property="snapVendorsText" destination="IYs-Yy-khe" id="vIq-H5-tnl"/>
                         <outlet property="startTimeText" destination="mhC-iD-FLo" id="Qx4-Vw-6YP"/>
+                        <outlet property="submit" destination="PTh-cq-JTR" id="wAb-dO-hv2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -285,6 +289,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y6r-lh-OWg">
+                                <rect key="frame" x="330" y="622" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitCust:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="SE4-bc-dTf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -296,9 +310,13 @@
                     <tabBarItem key="tabBarItem" title="Customer Addition" image="first" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="ageText" destination="tu3-Ku-Ia0" id="ZR1-S2-c98"/>
-                        <outlet property="freqNamesLabel" destination="yxE-e2-D3q" id="afO-bJ-QdX"/>
+                        <outlet property="ethNamesLabel" destination="yxE-e2-D3q" id="7em-yY-JvX"/>
+                        <outlet property="freq" destination="Rdb-df-VSz" id="mVq-rp-U4b"/>
+                        <outlet property="gender" destination="r7L-zl-74t" id="mtH-Vw-C1o"/>
                         <outlet property="picker" destination="rc1-Eg-5hg" id="4Cg-kp-OyS"/>
                         <outlet property="questionText" destination="NNl-2a-kK6" id="hfD-os-NdD"/>
+                        <outlet property="snapVSCredit" destination="d8u-54-N1D" id="neP-Y2-LVt"/>
+                        <outlet property="submit" destination="y6r-lh-OWg" id="0Na-Ra-bMU"/>
                         <outlet property="zipText" destination="sUO-hq-nxA" id="ypt-P2-Brs"/>
                     </connections>
                 </viewController>
@@ -319,7 +337,7 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="gCR-7y-BCw" kind="relationship" relationship="viewControllers" id="YOF-Hl-zRt"/>
+                        <segue destination="JHf-h5-Jk1" kind="relationship" relationship="viewControllers" id="Eoa-fU-ydk"/>
                         <segue destination="JVu-al-Ije" kind="relationship" relationship="viewControllers" id="gea-ax-FEu"/>
                         <segue destination="kqu-3w-aGZ" kind="relationship" relationship="viewControllers" id="EQe-Jl-fjA"/>
                         <segue destination="b4u-ES-lQx" kind="relationship" relationship="viewControllers" id="uvq-yg-QOa"/>
@@ -329,56 +347,15 @@
             </objects>
             <point key="canvasLocation" x="703" y="2294"/>
         </scene>
-        <!--Third View Controller - Customer Information-->
-        <scene sceneID="nmY-70-hqs">
+        <!--Customer Information Table View Controller - Customer Information-->
+        <scene sceneID="2dr-F6-3Kk">
             <objects>
-                <viewController id="gCR-7y-BCw" customClass="ThirdViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="b2Y-Ki-DCf"/>
-                        <viewControllerLayoutGuide type="bottom" id="XOS-YC-uQJ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ANR-7D-yyw">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Third View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="HT2-4x-HBL">
-                                <rect key="frame" x="20" y="250" width="728" height="42"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="Loaded by the Third View Controller — an instance of ThirdViewController — specified in the app delegate." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HNj-xi-Hyu">
-                                <rect key="frame" x="250" y="350" width="268" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="268" id="2vb-ke-CRe"/>
-                                    <constraint firstAttribute="height" constant="70" id="LUR-DI-Dlz"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" size="system"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="abd-jB-gYN">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
-                                <items/>
-                            </toolbar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="HT2-4x-HBL" firstAttribute="leading" secondItem="ANR-7D-yyw" secondAttribute="leading" constant="20" symbolic="YES" id="WgW-y2-7ts"/>
-                            <constraint firstItem="HNj-xi-Hyu" firstAttribute="top" secondItem="ANR-7D-yyw" secondAttribute="top" constant="350" id="Wjs-Pw-aYc"/>
-                            <constraint firstItem="HT2-4x-HBL" firstAttribute="top" secondItem="ANR-7D-yyw" secondAttribute="top" constant="250" id="ZIF-UA-Yf6"/>
-                            <constraint firstItem="abd-jB-gYN" firstAttribute="trailing" secondItem="ANR-7D-yyw" secondAttribute="trailing" id="ce2-7t-IMD"/>
-                            <constraint firstItem="abd-jB-gYN" firstAttribute="top" secondItem="ANR-7D-yyw" secondAttribute="top" id="md6-Qu-Jh1"/>
-                            <constraint firstItem="HNj-xi-Hyu" firstAttribute="centerX" secondItem="HT2-4x-HBL" secondAttribute="centerX" id="u2D-eH-tuM"/>
-                            <constraint firstItem="abd-jB-gYN" firstAttribute="leading" secondItem="ANR-7D-yyw" secondAttribute="leading" id="vcH-1H-tao"/>
-                            <constraint firstAttribute="trailing" secondItem="HT2-4x-HBL" secondAttribute="trailing" constant="20" symbolic="YES" id="yQC-QX-OYx"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Customer Information" image="first" id="Ilq-Xz-kOK"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0zz-DO-dlq" sceneMemberID="firstResponder"/>
+                <tableViewController id="JHf-h5-Jk1" customClass="CustomerInformationTableViewController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Customer Information" image="first" id="Llc-Pa-EbL"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UeU-7Q-JOa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3017" y="1930"/>
+            <point key="canvasLocation" x="3044" y="1993"/>
         </scene>
         <!--Fourth View Controller - Vendor-->
         <scene sceneID="Ce9-Sc-W6X">

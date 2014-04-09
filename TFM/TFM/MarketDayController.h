@@ -21,6 +21,8 @@
     IBOutlet UILabel *marketNamesLabel;
     NSArray *marketNames;
     IBOutlet UIPickerView *picker;
+    NSDateFormatter *formatter;
+    IBOutlet UIButton *submit;
 }
 
 @end
