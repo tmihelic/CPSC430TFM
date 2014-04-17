@@ -7,13 +7,13 @@
 //
 
 #import "MarketDayController.h"
+#import "CustomerAdditionController.h"
 
 @interface MarketDayController ()
 
 @end
 
 @implementation MarketDayController
-
 
 - (void)viewDidLoad
 {
@@ -22,22 +22,21 @@
     UIDatePicker *dp = [[UIDatePicker alloc]init];
     [dp setDatePickerMode:UIDatePickerModeDate];
     dateText.inputView = dp;
-    [formatter setDateFormat:@"MM/dd/yyyy"];
-    todaysDate = [formatter stringFromDate:[NSDate date]];
-    dateText.text = todaysDate;
-//    [dp addTarget:self
-//               action:@selector(datePickerValueChanged:)
-//     forControlEvents:UIControlEventValueChanged];
+    NSString *dateHolder = [NSDateFormatter localizedStringFromDate:[NSDate date]dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterNoStyle];
+    [dateText setText:dateHolder];
+    [dp addTarget:self
+               action:@selector(datePickerValueChanged:)
+     forControlEvents:UIControlEventValueChanged];
+    
     
     UIDatePicker *dp2 = [[UIDatePicker alloc]init];
     [dp2 setDatePickerMode:UIDatePickerModeTime];
     startTimeText.inputView = dp2;
-    [formatter setDateFormat:@"h:mm"];
-    startTime = [formatter stringFromDate:[NSDate date]];
-    startTimeText.text = startTime;
-//    [dp2 addTarget:self
-//           action:@selector(datePickerValueChanged2:)
-//    forControlEvents:UIControlEventValueChanged];
+    NSString *timeHolder = [NSDateFormatter localizedStringFromDate:[NSDate date]dateStyle:NSDateFormatterNoStyle timeStyle:NSTimeZoneNameStyleShortStandard];
+    [startTimeText setText:timeHolder];
+    [dp2 addTarget:self
+           action:@selector(datePickerValueChanged2:)
+    forControlEvents:UIControlEventValueChanged];
     
     UIToolbar *toolbar1 = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
     UIToolbar *toolbar2 = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
@@ -85,14 +84,23 @@
     [marketStaffText becomeFirstResponder];
     [notesText becomeFirstResponder];
     
-    marketNames = @[@"Australia (AUD)", @"China (CNY)",
-                      @"France (EUR)", @"Great Britain (GBP)", @"Japan (JPY)"];
+    marketNames = @[@"FredHrkmp", @"FredMayfld",
+                      @"SpotsGrdnRd", @"SpotsSRMC", @"SpotsCrtVlg", @"KGFM", @"Qntco"];
     
     dateText.delegate = self;
     startTimeText.delegate = self;
     snapVendorsText.delegate = self;
     regVendorsText.delegate = self;
     marketStaffText.delegate = self;
+    
+    marketNamesLabel.userInteractionEnabled = YES;
+    UITapGestureRecognizer *myLabel1Tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(myLabel1Tap:)];
+    [marketNamesLabel addGestureRecognizer:myLabel1Tap];
+    
+    [picker setHidden:true];
+    [marketSelect setHidden:true];
+    
+    obj = [[CustomerAdditionController alloc] init];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -152,8 +160,15 @@ numberOfRowsInComponent:(NSInteger)component
     NSString *filename = @"";
     filename = [dateText.text stringByReplacingOccurrencesOfString:@"/" withString:@"."];
     filename = [filename stringByAppendingString:(@".csv")];
-    NSLog(@"HEREHEREHERE=%@",filename);
     NSString *outputFileName = [docDirectory stringByAppendingPathComponent:filename];
+    
+    obj.fname = outputFileName;
+    NSLog(@"%@, %@", outputFileName, obj.fname);
+    
+
+    //CustomerAdditionController *obj=[[CustomerAdditionController alloc] init];
+    //obj.fname = [[NSString alloc] stringByAppendingFormat:@"%@", outputFileName];
+    
     //Create an error incase something goes wrong
     NSError *csvError = NULL;
     
@@ -164,9 +179,25 @@ numberOfRowsInComponent:(NSInteger)component
     if (!written)
         NSLog(@"write failed, error=%@", csvError);
     else
+    {
         NSLog(@"Saved! File path =%@",
               outputFileName);
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"File Submitted"
+                                                        message:@"Your file has been successfully submitted."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
 }
 
+-(void)myLabel1Tap:(UIGestureRecognizer *)gestureRecognizer {
+    [picker setHidden:false];
+    [marketSelect setHidden:false];
+}
+- (IBAction)doneMarket:(id)sender {
+    [marketSelect setHidden:true];
+    [picker setHidden:true];
+}
 
 @end

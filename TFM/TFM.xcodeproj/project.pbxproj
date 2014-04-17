@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		287B262C18F31B7500F5810B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 287B262518F31B7500F5810B /* Main.storyboard */; };
 		287B262D18F31B7500F5810B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 287B262818F31B7500F5810B /* InfoPlist.strings */; };
-		287B263218F31C6400F5810B /* CustomerInformationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 287B263118F31C6400F5810B /* CustomerInformationTableViewController.m */; };
 		289663EC18F46BD400EE2173 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 289663EB18F46BD400EE2173 /* Images.xcassets */; };
+		28A5EF2618FDA6200024D29C /* VendorAdditionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28A5EF2518FDA6200024D29C /* VendorAdditionController.m */; };
 		28B753BE18BB99950002A5DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28B753BD18BB99950002A5DA /* Foundation.framework */; };
 		28B753C018BB99950002A5DA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28B753BF18BB99950002A5DA /* CoreGraphics.framework */; };
 		28B753C218BB99950002A5DA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28B753C118BB99950002A5DA /* UIKit.framework */; };
@@ -25,7 +25,6 @@
 		28B753EA18BB99950002A5DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 28B753E818BB99950002A5DA /* InfoPlist.strings */; };
 		28B753EC18BB99950002A5DA /* TFMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B753EB18BB99950002A5DA /* TFMTests.m */; };
 		28B753FD18BBA4460002A5DA /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B753FC18BBA4460002A5DA /* FourthViewController.m */; };
-		28B7540218BBA5560002A5DA /* FifthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B753FF18BBA5560002A5DA /* FifthViewController.m */; };
 		28B7540318BBA5560002A5DA /* SixthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B7540118BBA5560002A5DA /* SixthViewController.m */; };
 		28FC382618D6440A00222584 /* MarketDayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FC382518D6440A00222584 /* MarketDayController.m */; };
 /* End PBXBuildFile section */
@@ -43,9 +42,9 @@
 /* Begin PBXFileReference section */
 		287B262618F31B7500F5810B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		287B262918F31B7500F5810B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
-		287B263018F31C6400F5810B /* CustomerInformationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerInformationTableViewController.h; sourceTree = "<group>"; };
-		287B263118F31C6400F5810B /* CustomerInformationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerInformationTableViewController.m; sourceTree = "<group>"; };
 		289663EB18F46BD400EE2173 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		28A5EF2218FDA5890024D29C /* VendorAdditionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VendorAdditionController.h; sourceTree = "<group>"; };
+		28A5EF2518FDA6200024D29C /* VendorAdditionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VendorAdditionController.m; sourceTree = "<group>"; };
 		28B753BA18BB99950002A5DA /* TFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28B753BD18BB99950002A5DA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		28B753BF18BB99950002A5DA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -66,8 +65,6 @@
 		28B753EB18BB99950002A5DA /* TFMTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TFMTests.m; sourceTree = "<group>"; };
 		28B753FB18BBA4460002A5DA /* FourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewController.h; sourceTree = "<group>"; };
 		28B753FC18BBA4460002A5DA /* FourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
-		28B753FE18BBA5560002A5DA /* FifthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FifthViewController.h; sourceTree = "<group>"; };
-		28B753FF18BBA5560002A5DA /* FifthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FifthViewController.m; sourceTree = "<group>"; };
 		28B7540018BBA5560002A5DA /* SixthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SixthViewController.h; sourceTree = "<group>"; };
 		28B7540118BBA5560002A5DA /* SixthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SixthViewController.m; sourceTree = "<group>"; };
 		28FC382418D6440A00222584 /* MarketDayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarketDayController.h; sourceTree = "<group>"; };
@@ -155,12 +152,10 @@
 				28B753CC18BB99950002A5DA /* AppDelegate.h */,
 				28B753CD18BB99950002A5DA /* AppDelegate.m */,
 				28B753CF18BB99950002A5DA /* Main.storyboard */,
-				287B263018F31C6400F5810B /* CustomerInformationTableViewController.h */,
-				287B263118F31C6400F5810B /* CustomerInformationTableViewController.m */,
 				28B753D518BB99950002A5DA /* CustomerAdditionController.h */,
 				28B753D618BB99950002A5DA /* CustomerAdditionController.m */,
-				28B753FE18BBA5560002A5DA /* FifthViewController.h */,
-				28B753FF18BBA5560002A5DA /* FifthViewController.m */,
+				28A5EF2218FDA5890024D29C /* VendorAdditionController.h */,
+				28A5EF2518FDA6200024D29C /* VendorAdditionController.m */,
 				28B7540018BBA5560002A5DA /* SixthViewController.h */,
 				28B7540118BBA5560002A5DA /* SixthViewController.m */,
 				28B753FB18BBA4460002A5DA /* FourthViewController.h */,
@@ -302,10 +297,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				28B753D718BB99950002A5DA /* CustomerAdditionController.m in Sources */,
+				28A5EF2618FDA6200024D29C /* VendorAdditionController.m in Sources */,
 				28B753CE18BB99950002A5DA /* AppDelegate.m in Sources */,
-				287B263218F31C6400F5810B /* CustomerInformationTableViewController.m in Sources */,
 				28B753FD18BBA4460002A5DA /* FourthViewController.m in Sources */,
-				28B7540218BBA5560002A5DA /* FifthViewController.m in Sources */,
 				28B753CA18BB99950002A5DA /* main.m in Sources */,
 				28FC382618D6440A00222584 /* MarketDayController.m in Sources */,
 				28B7540318BBA5560002A5DA /* SixthViewController.m in Sources */,

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CustomerAdditionController.h"
 
 
 @interface MarketDayController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate>{
@@ -22,7 +23,9 @@
     NSArray *marketNames;
     IBOutlet UIPickerView *picker;
     NSDateFormatter *formatter;
-    IBOutlet UIButton *submit;
+    IBOutlet UIButton *submitMarket;
+    IBOutlet UIButton *marketSelect;
+    CustomerAdditionController *obj;
 }
 
 @end

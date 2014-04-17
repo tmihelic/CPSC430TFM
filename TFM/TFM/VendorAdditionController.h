@@ -1,5 +1,5 @@
 //
-//  CustomerAdditionController.h
+//  VendorAdditionController.h
 //  TFM
 //
 //  Created by Michael Wang on 2/24/14.
@@ -8,22 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CustomerAdditionController : UIViewController <UITextFieldDelegate>{
+@interface VendorAdditionController : UIViewController <UITextFieldDelegate>{
     IBOutlet UITextField *zipText;
     IBOutlet UITextField *ageText;
     IBOutlet UIPickerView *picker;
-    NSArray *ethNames;
+    NSArray *freqNames;
     IBOutlet UILabel *ethNamesLabel;
     IBOutlet UITextView *questionText;
-    IBOutlet UIButton *submitCust;
+    IBOutlet UIButton *submit;
     IBOutlet UISegmentedControl *gender;
     IBOutlet UISegmentedControl *freq;
     IBOutlet UISegmentedControl *snapVSCredit;
-    IBOutlet UILabel *tokens;
-    IBOutlet UILabel *bonusTokens;
-    IBOutlet UITextField *tokensText;
-    IBOutlet UITextField *bonusTokensText;
+    NSArray *paths;// = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *docDirectory;// = [paths objectAtIndex:0];
+    NSString *outputFileName;// = [docDirectory stringByAppendingPathComponent:@"cust.csv"];
 }
-@property (nonatomic, retain)NSString *fname;
 
 @end
